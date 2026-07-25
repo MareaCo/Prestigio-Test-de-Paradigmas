@@ -61,7 +61,7 @@
 
 
   /* ---------- INTRO ---------- */
-  .hero{padding:88px 0 40px;position:relative}
+  .hero{padding-top:88px;padding-bottom:40px;position:relative}
   .eyebrow{
     font-size:12px;letter-spacing:.28em;text-transform:uppercase;
     color:var(--clay);font-weight:600;margin-bottom:26px;
@@ -78,6 +78,9 @@
     margin-bottom:28px;
   }
   h1 em{font-style:italic;color:var(--clay);font-weight:400}
+
+  /* intro-card: invisible on desktop, becomes a padded card on mobile */
+  .intro-card{padding:0}
 
   .lede{
     font-size:18px;max-width:56ch;color:#3a3128;
@@ -260,15 +263,21 @@
   }
 
   @media(max-width:560px){
-    .wrap{padding:0 26px}
+    .wrap{padding:0 20px}
     .choices{flex-direction:column}
-    .hero{padding:8px 0 36px}
-    h1{font-size:clamp(32px,9.5vw,44px);margin-bottom:22px;letter-spacing:-.015em;overflow-wrap:break-word;hyphens:auto}
+    .hero{padding-top:10px;padding-bottom:40px}
+    .brandrow{padding-left:0;padding-right:0}
+    h1{font-size:clamp(30px,8.5vw,42px);margin-bottom:24px;letter-spacing:-.015em;overflow-wrap:break-word;hyphens:auto}
+    .intro-card{
+      background:var(--paper-2);border:1px solid var(--line);border-radius:6px;
+      padding:26px 22px 24px;box-shadow:0 14px 34px -26px var(--shadow);
+    }
     .lede{font-size:16px;overflow-wrap:break-word}
-    .quote-frame{font-size:15.5px;padding:14px 0 14px 18px;margin:26px 0 30px;overflow-wrap:break-word}
+    .lede:first-child{margin-top:0}
+    .quote-frame{font-size:15px;padding:14px 0 14px 16px;margin:22px 0 26px;overflow-wrap:break-word}
     .card{padding:30px 22px 28px}
-    .start-btn{width:100%;justify-content:center;font-size:16px;padding:17px 24px}
-    .meta-row{gap:18px 22px;margin-top:32px}
+    .start-btn{width:100%;justify-content:center;font-size:16px;padding:17px 24px;margin-bottom:0}
+    .meta-row{gap:18px 22px;margin-top:28px}
   }
   @media(prefers-reduced-motion:reduce){
     *{animation:none!important;transition:none!important}
@@ -296,10 +305,12 @@
       <div class="eyebrow">Human AI First Company® · Liderazgo desde el SER</div>
     </div>
     <h1>Los cristales<br>a través de los<br>que <em>lideras</em></h1>
-    <p class="lede">Nuestras experiencias y los significados que les damos se vuelven <strong>creencias, valores y paradigmas</strong>: los cristales a través de los cuales vemos el mundo — y desde los cuales lideramos.</p>
-    <p class="lede">La capacidad de observar nuestras propias creencias y desafiarlas es lo que abre un aprendizaje capaz de cambiar actitudes y comportamientos.</p>
-    <div class="quote-frame">Este no es un examen. Ninguna respuesta suma ni resta. Es un espejo: diez afirmaciones sobre liderazgo, y la creencia que se asoma detrás de tu respuesta.</div>
-    <button class="start-btn" id="startBtn">Empezar el espejo <span class="arrow">→</span></button>
+    <div class="intro-card">
+      <p class="lede">Nuestras experiencias y los significados que les damos se vuelven <strong>creencias, valores y paradigmas</strong>: los cristales a través de los cuales vemos el mundo — y desde los cuales lideramos.</p>
+      <p class="lede">La capacidad de observar nuestras propias creencias y desafiarlas es lo que abre un aprendizaje capaz de cambiar actitudes y comportamientos.</p>
+      <div class="quote-frame">Este no es un examen. Ninguna respuesta suma ni resta. Es un espejo: diez afirmaciones sobre liderazgo, y la creencia que se asoma detrás de tu respuesta.</div>
+      <button class="start-btn" id="startBtn">Empezar el espejo <span class="arrow">→</span></button>
+    </div>
     <div class="meta-row">
       <div><b>10</b>afirmaciones</div>
       <div><b>V / F</b>respuesta espontánea</div>
